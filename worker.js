@@ -55,7 +55,7 @@ export default {
   if(inwi){
    let vouchers;
    try{vouchers=JSON.parse(String(form.get('vouchers')||''))}catch(_){return json({ok:false,error:'أكواد التعبئة غير صحيحة.'},400)}
-   if(!Array.isArray(vouchers)||vouchers.length!==expectedVoucherCount(amount)||vouchers.some(v=>typeof v!=='string'||!/^\d{14}$/.test(v))||new Set(vouchers).size!==vouchers.length){
+   if(!Array.isArray(vouchers)||vouchers.length!==expectedVoucherCount(amount)||vouchers.some(v=>typeof v!=='string'||!/^\d{16}$/.test(v))||new Set(vouchers).size!==vouchers.length){
     return json({ok:false,error:'تحقق من أكواد تعبئة Inwi.'},400);
    }
    lines.push('أكواد Inwi:');
