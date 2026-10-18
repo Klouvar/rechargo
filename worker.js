@@ -61,6 +61,14 @@ export default {
    lines.push('أكواد Inwi:');
    vouchers.forEach((code,i)=>lines.push(`${i+1}. ${code}`));
    tgForm.set('text',lines.join('\n'));
+   // Telegram's copy_text inline buttons copy the full 16-digit code in one tap.
+   // Keep the code visible in the message as a fallback for older clients.
+   tgForm.set('reply_markup',JSON.stringify({
+    inline_keyboard:vouchers.map((code,i)=>[{
+     text:`📋 نسخ كود Inwi رقم ${i+1}`,
+     copy_text:{text:code}
+    }])
+   }));
    endpoint='sendMessage';
   }else{
    const receipt=form.get('receipt');
