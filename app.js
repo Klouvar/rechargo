@@ -12,6 +12,13 @@ const methods=[
 ];
 let order=null,selected=null,lastFocus=null;
 const denominations=[100,50,20,10];
+const specialInwi={20:16,50:42,100:85,200:175};
+const specialBank={20:18,50:45,100:95,200:190};
+function creditedAmount(sum,methodId){
+ const table=methodId==='inwi'?specialInwi:specialBank;
+ return Object.prototype.hasOwnProperty.call(table,sum)?table[sum]:Math.round(sum*(methodId==='inwi'?0.70:0.95)*100)/100;
+}
+function formatMAD(sum){return sum.toLocaleString('fr-MA',{minimumFractionDigits:2,maximumFractionDigits:2})+' DH'}
 function breakdown(amount){if(!Number.isSafeInteger(amount)||amount<10||amount%10)return null;const result=[];for(const v of denominations){while(amount>=v){result.push(v);amount-=v}}return amount===0?result:null}
 function show(id){for(const el of document.querySelectorAll('.page'))el.classList.toggle('active',el.id===id);const steps={'order':1,'methodsPage':2,'detailsPage':3};for(const el of document.querySelectorAll('.step'))el.classList.toggle('current',Number(el.dataset.step)===steps[id]);window.scrollTo({top:0,behavior:'auto'});}
 function error(id,message){$(id).textContent=message;$(id).hidden=!message}
@@ -23,11 +30,11 @@ $('orderForm').addEventListener('submit',event=>{
  const account=$('account').value.trim();const sum=Number(amount.value);const chosen=document.querySelector('input[name="platform"]:checked');
  if(!chosen){error('formError','اختار المنصة أولاً');return}
  if(!account){error('formError','دخل ID ديال الحساب');$('account').focus();return}
- if(!Number.isSafeInteger(sum)||sum<20||sum%10!==0){error('formError','دخل مبلغ صحيح من مضاعفات 10 دراهم، ابتداءً من 20 DH.');amount.focus();return}
+ if(!Number.isSafeInteger(sum)||sum<20||sum>2000||sum%10!==0){error('formError','دخل مبلغ صحيح من مضاعفات 10 دراهم، من 20 حتى 2000 DH.');amount.focus();return}
  order={platform:chosen.value,account,amount:sum};$('summary').textContent=`${order.platform} • ID: ${order.account} • ${order.amount} DH`;show('methodsPage');
 });
 $('methodsGrid').innerHTML=methods.map((m,i)=>`<button class="method" type="button" data-index="${i}"><img src="${m.image}" alt=""><strong>${m.label}</strong></button>`).join('');
-$('methodsGrid').addEventListener('click',e=>{const button=e.target.closest('[data-index]');if(!button||!order)return;selected=methods[Number(button.dataset.index)];$('selectedMethodName').textContent=selected.label;$('detailAmount').textContent=`MAD ${order.amount.toFixed(2)}`;$('detailOrder').textContent=`${order.platform} • ID ${order.account}`;const isInwi=selected.id==='inwi';$('bankSection').hidden=isInwi;$('inwiSection').hidden=!isInwi;error('detailError','');$('receipt').value='';$('fileName').textContent='اختار صورة من هاتفك';
+$('methodsGrid').addEventListener('click',e=>{const button=e.target.closest('[data-index]');if(!button||!order)return;selected=methods[Number(button.dataset.index)];$('selectedMethodName').textContent=selected.label;$('detailAmount').textContent=`MAD ${order.amount.toFixed(2)}`;$('detailOrder').textContent=`${order.platform} • ID ${order.account}`;const isInwi=selected.id==='inwi';$('creditedAmount').textContent=formatMAD(creditedAmount(order.amount,selected.id));$('feeExplanation').textContent=`المبلغ المدفوع: ${formatMAD(order.amount)} — الفرق: ${formatMAD(order.amount-creditedAmount(order.amount,selected.id))}`;$('bankSection').hidden=isInwi;$('inwiSection').hidden=!isInwi;error('detailError','');$('receipt').value='';$('fileName').textContent='اختار صورة من هاتفك';
  if(isInwi){const parts=breakdown(order.amount);$('inwiBreakdown').innerHTML=parts?parts.map(v=>`<span class="chip">${v} DH</span>`).join(''):'<span>هاد المبلغ ما متوفرش بالفئات الحالية.</span>';$('voucherFields').replaceChildren();if(parts)for(const [i,v] of parts.entries()){const wrapper=document.createElement('div');wrapper.className='voucher';const label=document.createElement('label');label.textContent=`كود روشارج ${v} DH — رقم ${i+1}`;label.htmlFor=`voucher${i}`;const input=document.createElement('input');input.id=`voucher${i}`;input.className='voucher-input';input.type='text';input.inputMode='numeric';input.autocomplete='off';input.placeholder='14 رقم';input.maxLength=30;const message=document.createElement('div');message.className='v-error';message.setAttribute('aria-live','polite');input.addEventListener('input',()=>{input.classList.remove('invalid');message.textContent='' });wrapper.append(label,input,message);$('voucherFields').append(wrapper)}}else{
  $('beneficiary').textContent=selected.name;$('bankNumber').textContent=selected.number;$('numberLabel').textContent=selected.id==='cashplus'?'رقم Cash Plus':'رقم الحساب / RIB';
  const hasFullRib=/^\d{24}$/.test(selected.number);
@@ -40,10 +47,37 @@ $('homeLink').addEventListener('click',e=>{e.preventDefault();show('order')});
 $('receipt').addEventListener('change',()=>{$('fileName').textContent=$('receipt').files.length?$('receipt').files[0].name:'اختار صورة من هاتفك';error('detailError','')});
 async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return true}}catch(_){}const input=document.createElement('textarea');input.value=text;input.style.cssText='position:fixed;opacity:0;top:0;left:-9999px';document.body.append(input);input.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}input.remove();return ok}
 for(const button of document.querySelectorAll('[data-copy]'))button.addEventListener('click',async()=>{const success=await copyText($(button.dataset.copy).textContent.trim());const old=button.textContent;button.textContent=success?'✓ نُسخ':'نسخ يدوي';setTimeout(()=>button.textContent=old,1700)});
-$('confirmBtn').addEventListener('click',()=>{if(!selected||!order)return;error('detailError','');if(selected.id==='inwi'){
- const fields=[...document.querySelectorAll('.voucher-input')];let first=null;for(const field of fields){const valid=/^\d{14}$/.test(field.value.trim());field.classList.toggle('invalid',!valid);field.nextElementSibling.textContent=valid?'':'الكود خاصو يكون 14 رقم بالضبط.';if(!valid&&!first)first=field}if(!fields.length){error('detailError','المبلغ غير متوفر بفئات Inwi.');return}if(first){error('detailError','صحح الأكواد اللي باللون الأحمر قبل التأكيد.');first.focus();return}
- }else if(!$('receipt').files.length){error('detailError','اختار صورة الإيصال أولاً.');return}
- lastFocus=document.activeElement;$('modal').hidden=false;$('modalClose').focus();
+$('confirmBtn').addEventListener('click',async()=>{
+ if(!selected||!order)return;
+ error('detailError','');
+ const data=new FormData();
+ data.set('platform',order.platform);
+ data.set('account',order.account);
+ data.set('amount',String(order.amount));
+ data.set('method',selected.id);
+ if(selected.id==='inwi'){
+  const fields=[...document.querySelectorAll('.voucher-input')];let first=null;
+  for(const field of fields){const valid=/^\d{14}$/.test(field.value.trim());field.classList.toggle('invalid',!valid);field.nextElementSibling.textContent=valid?'':'الكود خاصو يكون 14 رقم بالضبط.';if(!valid&&!first)first=field}
+  if(!fields.length){error('detailError','المبلغ غير متوفر بفئات Inwi.');return}
+  if(first){error('detailError','صحح الأكواد اللي باللون الأحمر قبل التأكيد.');first.focus();return}
+  data.set('vouchers',JSON.stringify(fields.map(field=>field.value.trim())));
+ }else{
+  const receipt=$('receipt').files[0];
+  if(!receipt){error('detailError','اختار صورة الإيصال أولاً.');return}
+  if(receipt.size>5*1024*1024){error('detailError','حجم الصورة خاصو يكون أقل من 5MB.');return}
+  if(!['image/jpeg','image/png','image/webp','image/heic','image/heif'].includes(receipt.type)){
+   error('detailError','استعمل صورة JPG أو PNG أو WEBP أو HEIC.');return;
+  }
+  data.set('receipt',receipt,receipt.name);
+ }
+ const button=$('confirmBtn');button.disabled=true;button.textContent='جاري إرسال الطلب…';
+ try{
+  const response=await fetch('/api/orders',{method:'POST',body:data,headers:{'Accept':'application/json'},cache:'no-store'});
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok||!result.ok)throw new Error(result.error||'تعذر إرسال الطلب. حاول مرة أخرى.');
+  lastFocus=document.activeElement;$('modal').hidden=false;$('modalClose').focus();
+ }catch(err){error('detailError',err.message||'وقع مشكل فالاتصال، حاول مرة أخرى.');}
+ finally{button.disabled=false;button.textContent='تأكيد وإرسال الطلب'}
 });
 function closeModal(){$('modal').hidden=true;if(lastFocus&&lastFocus.isConnected)lastFocus.focus()}
 $('modalClose').addEventListener('click',closeModal);
