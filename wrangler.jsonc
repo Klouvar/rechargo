@@ -8,5 +8,19 @@
     "run_worker_first": [
       "/api/*"
     ]
-  }
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SPAM_GUARD",
+        "class_name": "RecharGoSpamGuard"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1-spam-guard",
+      "new_sqlite_classes": ["RecharGoSpamGuard"]
+    }
+  ]
 }
