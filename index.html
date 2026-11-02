@@ -1,37 +1,121 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071b29">
-<meta name="description" content="RecharGo — واجهة معاينة للإيداع والسحب وطرق الأداء والدعم عبر واتساب.">
-<title>RecharGo | الشحن والسحب</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
-<script defer src="app.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#2a0b25" name="theme-color"/>
+<meta content="RecharGo خدمة مستقلة لتقديم طلبات إيداع الرصيد في منصات المراهنات المدعومة عبر روشارج إنوي، مع عرض المبلغ ومراجعة الطلبات يدوياً. للبالغين فقط." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://rechargo.shop/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="ar_MA" property="og:locale"/>
+<meta content="RecharGo" property="og:site_name"/>
+<meta content="RecharGo | شحن الحسابات عبر روشارج إنوي" property="og:title"/>
+<meta content="RecharGo خدمة مستقلة لتقديم طلبات إيداع الرصيد في منصات المراهنات المدعومة عبر روشارج إنوي، مع عرض المبلغ ومراجعة الطلبات يدوياً. للبالغين فقط." property="og:description"/>
+<meta content="https://rechargo.shop/" property="og:url"/>
+<title>RecharGo | شحن الحسابات عبر روشارج إنوي</title>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/style.css" rel="stylesheet"/>
+<script defer="" src="/app.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"RecharGo","url":"https://rechargo.shop/","inLanguage":"ar-MA","description":"خدمة استقبال طلبات التعبئة بكود Inwi للمنصات المدعومة، مع مراجعة يدوية للطلبات."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"RecharGo - طريقة إرسال طلب التعبئة بكود Inwi","description":"فيديو توضيحي قصير يشرح إرسال طلب تعبئة المنصات المدعومة باستخدام كود Inwi. الطلب يخضع للمراجعة قبل التأكيد.","thumbnailUrl":"https://rechargo.shop/assets/rechargo-guide-poster.jpg","uploadDate":"2026-11-02T12:00:00+00:00","duration":"PT20S","contentUrl":"https://rechargo.shop/assets/rechargo-guide-inwi.mp4","inLanguage":"ar-MA"}</script>
 </head>
 <body>
-<header class="header"><div class="header-inner"><a href="#" class="brand" id="homeLink" aria-label="الصفحة الرئيسية">Rechar<span>Go</span><i></i></a><a class="help-small" href="https://wa.me/212603789849?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D9%85%D8%B4%D9%83%D9%84%20%D9%81%D9%80%20RecharGo%20%D9%88%D8%A8%D8%BA%D9%8A%D8%AA%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9." target="_blank" rel="noopener noreferrer">☏ المساعدة</a></div></header>
-<main class="shell">
-<section class="hero"><div class="eyebrow">✦ واجهة سريعة وبسيطة</div><h1>شحن حسابك <em>بخطوات سهلة</em></h1><p>اختار المنصة، المبلغ، وطريقة الأداء. جميع التفاصيل فمكان واحد.</p><div class="hero-actions"><a href="#order" class="hero-btn">↓ إيداع الأموال</a><a class="hero-btn ghost" href="https://wa.me/212603789849?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A8%D8%BA%D9%8A%D8%AA%20%D9%86%D8%AF%D9%8A%D8%B1%20%D8%B7%D9%84%D8%A8%20%D8%B3%D8%AD%D8%A8%20%D8%A7%D9%84%D8%A3%D9%85%D9%88%D8%A7%D9%84%20%D9%85%D9%86%20RecharGo." target="_blank" rel="noopener noreferrer">↗ سحب الأموال</a></div></section>
-<aside class="inwi-home-banner" aria-label="شحن الحساب عبر روشارج Inwi"><span class="inwi-home-icon" aria-hidden="true">📱</span><div><strong>ما عندكش حساب بنكي؟ ماشي مشكل!</strong><p>مع <b>RecharGo</b> تقدر تشحن حتى بروشارج <b>Inwi</b>، بلا ما تحتاج لتحويل بنكي.</p><small>اختار المنصة والمبلغ، ومن بعد اختار Recharge Inwi فطرق الأداء.</small></div></aside>
-<div class="steps" aria-label="مراحل الطلب"><span class="step current" data-step="1"><b>1</b> معلومات الطلب</span><span class="step" data-step="2"><b>2</b> طريقة الأداء</span><span class="step" data-step="3"><b>3</b> التفاصيل</span></div>
-<section id="order" class="page active" aria-labelledby="orderTitle"><div class="card"><div class="section-title"><span class="icon-tile">▦</span><div><h2 id="orderTitle">اختار المنصة</h2><p>اضغط على المنصة اللي بغيتي تشحن فيها</p></div></div><form id="orderForm"><div class="platform-grid" id="platformGrid">
-<label class="platform"><input type="radio" name="platform" value="1XBET" checked><span class="platform-body"><img src="assets/1xbet.svg" alt="" loading="lazy"><strong>1XBET</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="BETWINNER"><span class="platform-body"><img src="assets/betwinner.svg" alt="" loading="lazy"><strong>BETWINNER</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="MELBET"><span class="platform-body"><img src="assets/melbet.svg" alt="" loading="lazy"><strong>MELBET</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="MEGAPARI"><span class="platform-body"><img src="assets/megapari.svg" alt="" loading="lazy"><strong>MEGAPARI</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="MYSTAKE"><span class="platform-body"><img src="assets/mystake.svg" alt="" loading="lazy"><strong>MYSTAKE</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="GOOOBET"><span class="platform-body"><img src="assets/gooobet.svg" alt="" loading="lazy"><strong>GOOOBET</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="STAKE"><span class="platform-body"><img src="assets/stake.svg" alt="" loading="lazy"><strong>STAKE</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="LINEBET"><span class="platform-body"><img src="assets/linebet.svg" alt="" loading="lazy"><strong>LINEBET</strong></span></label>
-<label class="platform"><input type="radio" name="platform" value="1WIN"><span class="platform-body"><img src="assets/1win.svg" alt="" loading="lazy"><strong>1WIN</strong></span></label>
-</div><div class="separator"></div><div class="field"><label for="account">ID ديال الحساب</label><input id="account" name="account" type="text" inputmode="text" maxlength="64" autocomplete="off" placeholder="دخل ID ديالك" required><small>تأكد من رقم الحساب قبل المتابعة</small></div><div class="field"><label for="amount">المبلغ بالدرهم (MAD)</label><div class="amount-wrap"><input id="amount" name="amount" type="number" min="20" max="2000" step="10" inputmode="numeric" placeholder="مثلاً 70" required><span>MAD</span></div></div><div class="presets" aria-label="مبالغ مقترحة"><button type="button" data-amount="50">50 DH</button><button type="button" data-amount="70">70 DH</button><button type="button" data-amount="100">100 DH</button><button type="button" data-amount="200">200 DH</button></div><p id="formError" class="error" role="alert" hidden></p><button class="primary" type="submit">متابعة ←</button></form></div></section>
-<section id="methodsPage" class="page" aria-labelledby="methodsTitle"><div class="card"><button class="back" type="button" data-back="order">→ رجوع</button><div class="section-title"><span class="icon-tile">▣</span><div><h2 id="methodsTitle">اختار طريقة الأداء</h2><p>الطرق المتوفرة للإيداع</p></div></div><div class="summary" id="summary"></div><div class="methods-grid" id="methodsGrid"></div></div></section>
-<section id="detailsPage" class="page" aria-labelledby="detailsTitle"><div class="card"><button class="back" type="button" data-back="methodsPage">→ رجوع لطرق الأداء</button><div class="section-title"><span class="icon-tile">◈</span><div><h2 id="detailsTitle">تفاصيل الأداء</h2><p id="selectedMethodName"></p></div></div><div class="amount-hero"><strong id="detailAmount"></strong><span id="detailOrder"></span></div><div class="credit-card" aria-live="polite"><small>المبلغ اللي غادي يتزاد فحسابك بعد التحقق من الأداء</small><strong id="creditedAmount"></strong><span id="feeExplanation"></span></div><div id="bankSection" hidden><div class="notice" id="bankNotice"></div><div class="info-row"><div><small>اسم المستفيد</small><strong id="beneficiary"></strong></div><button type="button" class="copy" data-copy="beneficiary">نسخ</button></div><div class="info-row"><div><small id="numberLabel">رقم الحساب / RIB</small><strong id="bankNumber" class="ltr"></strong></div><button type="button" class="copy" data-copy="bankNumber">نسخ</button></div><div class="info-row"><div><small>سبب التحويل / Motif</small><strong id="motif">SRV</strong></div><button type="button" class="copy" data-copy="motif">نسخ</button></div><div class="processing">✦ يتم شحن الحساب خلال 3 دقائق بعد استلام الأموال <small>المدة تقديرية وغير مضمونة</small></div><label class="upload" for="receipt">📎 <strong>رفع صورة إيصال التحويل</strong><span id="fileName">اختار صورة من هاتفك</span><input type="file" id="receipt" accept="image/*"></label></div><div id="inwiSection" hidden><div class="notice">اختار الروشارجات حسب المبلغ ودخل كود كل واحدة (16 رقم بالضبط).</div><div id="inwiBreakdown" class="inwi-breakdown"></div><div id="voucherFields"></div></div><p id="detailError" class="error" role="alert" hidden></p><button class="primary" type="button" id="confirmBtn">تأكيد وإرسال الطلب</button><p class="disclaimer">إرسال الطلب لا يعني تأكيد الأداء أو شحن الحساب؛ تتم المراجعة أولاً. يتم إرسال تفاصيل الطلب إلى فريق RecharGo عبر Telegram.</p></div></section>
-<section class="support"><div><h2>واجهتي شي مشكل؟</h2><p>تواصل معانا مباشرة عبر واتساب للمساعدة.</p></div><a href="https://wa.me/212603789849?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D9%85%D8%B4%D9%83%D9%84%20%D9%81%D9%80%20RecharGo%20%D9%88%D8%A8%D8%BA%D9%8A%D8%AA%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9." target="_blank" rel="noopener noreferrer" class="support-btn">☏ واتساب</a></section>
-<footer>RecharGo · تُراجع الطلبات قبل اعتمادها · لا تشارك أكواد التعبئة مع أي جهة أخرى<br>شعارات المنصات رسومات نصية توضيحية، ولا تدل على شراكة رسمية.</footer>
+<a class="skip" href="#start">تجاوز للقسم الرئيسي</a>
+<div class="topline"><span class="pulse"></span> استقبال الطلبات متاح — تأكيد الشحن بعد المراجعة</div>
+<header class="site-header">
+<div class="container nav">
+<a aria-label="RecharGo الصفحة الرئيسية" class="logo" href="#top"><span class="logo-mark">ϟ</span><span>Rechar<span class="logo-green">Go</span></span></a>
+<div class="nav-links"><a href="#how">كيفاش كتخدم؟</a><a href="#guide">شرح بالفيديو</a><a href="#faq">الأسئلة</a></div>
+<a class="nav-help" href="https://wa.me/212724698562?text=Salam%20RecharGo" rel="noopener noreferrer" target="_blank">واتساب: 0724 698 562 ↗</a>
+</div>
+</header>
+<main id="top">
+<section aria-labelledby="heroTitle" class="hero container navy-hero"><div aria-hidden="true" class="ambient-art"><span class="ambient-orb orb-a"></span><span class="ambient-orb orb-b"></span><span class="ambient-orb orb-c"></span><span class="spark spark-a">✦</span><span class="spark spark-b">✧</span><span class="spark spark-c">✦</span></div><div class="hero-copy">
+<div class="eyebrow"><span class="dot"></span> RecharGo · الأداء بكود Inwi فقط</div>
+<h1 id="heroTitle">باغي تدير طلب تعبئة؟<br/><span>دير طلبك بكود إنوي.</span></h1>
+<p class="hero-sub">خدمة مستقلة لطلبات تعبئة حسابات منصات المراهنات المدعومة. اختار المنصة وID والمبلغ، وشوف المبلغ المتوقع والفرق قبل ما تصيفط كود Inwi للمراجعة. ما محتاجش حساب بنكي.</p>
+<div class="hero-actions"><a class="btn btn-main" href="#start">بدا طلب التعبئة <span aria-hidden="true">←</span></a><a class="btn btn-ghost" href="#guide">شوف كيفاش كتخدم <span aria-hidden="true">▶</span></a></div>
+<div class="hero-points"><span>✓ كود Inwi فقط</span><span>✓ المبلغ واضح قبل الإرسال</span><span>✓ متابعة يدوية للطلبات</span></div><div aria-label="مراحل طلب التعبئة" class="flow-track"><span><b>01</b> المنصة</span><i aria-hidden="true"></i><span><b>02</b> المبلغ</span><i aria-hidden="true"></i><span><b>03</b> كود Inwi</span><i aria-hidden="true"></i><span><b>04</b> المراجعة</span></div>
+<p class="hero-fineprint">🔞 للبالغين فقط · الطلب ماشي تأكيد فوري للشحن · المراهنات فيها مخاطر مالية</p>
+</div><a aria-label="شاهد الفيديو والصورة التوضيحية لطريقة إرسال طلب التعبئة" class="hero-showcase" href="#guide">
+<div class="showcase-head"><span class="showcase-live"><i></i> شرح سريع</span><span>RecharGo / Inwi</span></div>
+<div class="showcase-art"><img alt="صورة من فيديو شرح طريقة إرسال طلب التعبئة بكود Inwi" fetchpriority="high" height="1280" src="/assets/rechargo-guide-poster.jpg" width="720"/><span aria-hidden="true" class="showcase-play">▶</span></div>
+<div class="showcase-bottom"><strong>شوف الطريقة فـ 20 ثانية</strong><span>شاهد الفيديو ←</span></div>
+</a></section>
+<section aria-label="مزايا الخدمة" class="feature-strip container"><div><span class="feature-icon">01</span><strong>بلا حساب بنكي</strong><small>الأداء بكود Inwi</small></div><div><span class="feature-icon">03</span><strong>طلبك كيتراجع</strong><small>تأكيد الشحن من بعد التحقق</small></div></section>
+<section aria-labelledby="howTitle" class="how-section container" id="how"><div class="section-intro"><span class="section-label">بسيطة وواضحة</span><h2 id="howTitle">كيفاش كتخدم الخدمة؟</h2></div><div class="how-grid"><article class="reveal-card" style="--delay:0ms"><span>01</span><h3>اختار المنصة</h3><p>حدد المنصة، دخل ID والمبلغ اللي بغيتي تخلص.</p></article><article class="reveal-card" style="--delay:110ms"><span>02</span><h3>دخل كود Inwi</h3><p>شوف المبلغ المتوقع ودخل الأكواد المطلوبة.</p></article><article class="reveal-card" style="--delay:220ms"><span>03</span><h3>تسنى المراجعة</h3><p>فريق RecharGo كيتحقق من الطلب قبل ما يتم تأكيد الشحن.</p></article></div></section><section aria-labelledby="guideTitle" class="media-guide container" id="guide">
+<div class="section-intro"><span class="section-label">شرح بالصورة والفيديو</span><h2 id="guideTitle">شوف الطريقة قبل ما تبدا</h2><p>فيديو قصير وصورة كيبينو ليك المراحل وحدة بوحدة. من بعد، تقدر تبدا الطلب ديالك.</p></div>
+<div class="media-guide-grid">
+<article class="media-guide-card">
+<div class="media-guide-heading"><span class="media-guide-label">🎬 فيديو · 20 ثانية</span><h3>الطريقة بالفيديو</h3></div>
+<video aria-label="فيديو توضيحي لطريقة إرسال طلب التعبئة بكود Inwi" class="media-guide-video" controls="" playsinline="" poster="/assets/rechargo-guide-poster.jpg" preload="metadata">
+<source src="/assets/rechargo-guide-inwi.mp4" type="video/mp4"/>
+            المتصفح ديالك ما كيدعمش تشغيل الفيديو.
+          </video>
+<p class="media-guide-note">اختار المنصة، دخل ID والمبلغ، ومن بعد كود Inwi، وصيفط الطلب للمراجعة.</p>
+</article>
+<article class="media-guide-card">
+<div class="media-guide-heading"><span class="media-guide-label">🖼️ صورة توضيحية</span><h3>الخطوات فصورة وحدة</h3></div>
+<a aria-label="فتح الصورة التوضيحية بالحجم الكامل" class="media-guide-image-link" href="/assets/rechargo-guide-inwi.png" rel="noopener" target="_blank">
+<img alt="رسم توضيحي لمراحل طلب التعبئة: اختيار المنصة، إدخال معلومات الحساب، إدخال كود إنوي، ثم إرسال الطلب" class="media-guide-image" decoding="async" height="1248" loading="lazy" src="/assets/rechargo-guide-inwi.png" width="1248"/>
+</a>
+<p class="media-guide-note">الصورة تقريبية وماشي لقطة من الموقع. <strong>المعتمد فالموقع هو كود Inwi من 16 رقم، وإرسال الطلب ماشي تأكيد للشحن.</strong></p>
+</article>
+</div>
+<div class="media-guide-cta"><a class="btn btn-main" href="#start">بدا طلب التعبئة <span aria-hidden="true">←</span></a><p>الخدمة مخصصة للبالغين فقط. الطلبات كتتراجع يدوياً.</p></div>
+</section><div class="bridge-cta container"><div><span>واجد تبدا؟</span><strong>المعلومات ديالك، كود Inwi، وصافي.</strong><small>كل طلب كيحتاج مراجعة قبل تأكيد التعبئة.</small></div><a class="btn btn-main" href="#start">بدا الطلب ←</a></div><section aria-labelledby="orderHeading" class="order-section container" id="start">
+<div class="section-intro"><span class="section-label">ابدأ من هنا</span><h2 id="orderHeading">وجد طلب التعبئة ديالك</h2><p>غير المعلومات الضرورية، والمبلغ كيبان قبل ما تصيفط الأكواد.</p></div>
+<div class="order-layout">
+<div class="form-card">
+<div class="progress"><span class="progress-step is-current" id="progressOne"><b>1</b> معلومات الحساب</span><span class="progress-line"></span><span class="progress-step" id="progressTwo"><b>2</b> كود Inwi</span></div>
+<section aria-labelledby="stepOneTitle" id="stepOne">
+<h3 id="stepOneTitle">فين بغيتي التعبئة؟</h3><p class="hint">اختار المنصة ديالك من هاد القائمة.</p>
+<form id="orderForm" novalidate="">
+<div aria-label="المنصة" class="platform-grid" role="radiogroup">
+<label class="platform"><input checked="" name="platform" type="radio" value="1XBET"/><span><img alt="" loading="lazy" src="/assets/1xbet.svg"/><strong>1XBET</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="BETWINNER"/><span><img alt="" loading="lazy" src="/assets/betwinner.svg"/><strong>BETWINNER</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="MELBET"/><span><img alt="" loading="lazy" src="/assets/melbet.svg"/><strong>MELBET</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="MEGAPARI"/><span><img alt="" loading="lazy" src="/assets/megapari.svg"/><strong>MEGAPARI</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="MYSTAKE"/><span><img alt="" loading="lazy" src="/assets/mystake.svg"/><strong>MYSTAKE</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="GOOOBET"/><span><img alt="" loading="lazy" src="/assets/gooobet.svg"/><strong>GOOOBET</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="STAKE"/><span><img alt="" loading="lazy" src="/assets/stake.svg"/><strong>STAKE</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="LINEBET"/><span><img alt="" loading="lazy" src="/assets/linebet.svg"/><strong>LINEBET</strong></span></label>
+<label class="platform"><input name="platform" type="radio" value="1WIN"/><span><img alt="" loading="lazy" src="/assets/1win.svg"/><strong>1WIN</strong></span></label>
+</div>
+<div class="fields"><div class="field"><label for="account">ID ديال الحساب</label><input autocomplete="off" id="account" inputmode="text" maxlength="64" name="account" pattern="[0-9A-Za-z_-]+" placeholder="مثلاً 123456789" required="" type="text"/><small>دخل ID صحيح ديال الحساب اللي بغيتي تشحن</small></div><div class="field amount-field"><p class="amount-heading" id="amountHeading">اختار مبلغ التعبئة بكود Inwi</p><input id="amount" name="amount" type="hidden" value=""/><div aria-label="مبالغ سريعة" aria-labelledby="amountHeading" class="amount-chips" role="group"><button aria-pressed="false" data-amount="20" type="button">20 DH</button><button aria-pressed="false" data-amount="50" type="button">50 DH</button><button aria-pressed="false" data-amount="100" type="button">100 DH</button><button aria-pressed="false" data-amount="200" type="button">200 DH</button><button aria-pressed="false" data-amount="300" type="button">300 DH</button><button aria-controls="customAmountPanel" aria-expanded="false" class="other-amount-btn" id="customAmountBtn" type="button">✎ مبلغ آخر</button></div><div class="custom-amount-panel" hidden="" id="customAmountPanel">
+<label for="customAmount">دخل المبلغ اللي بغيتي (بالدرهم)</label>
+<div class="custom-input-wrap"><input aria-describedby="customAmountHint" autocomplete="off" id="customAmount" inputmode="numeric" max="2000" min="20" placeholder="مثلاً 450" step="10" type="number"/><span>DH</span></div>
+<small id="customAmountHint">من 20 حتى 2000 درهم، بمضاعفات 10 فقط. غادي تحتاج كودات Inwi بقيم 10 / 20 / 50 / 100 درهم.</small>
+</div><small class="amount-hint">اختار مبلغ واحد، وغادي يبان ليك المبلغ المتوقع يتزاد فالحساب قبل تأكيد الطلب.</small></div></div>
+<div aria-live="polite" class="price-preview"><div><small>المبلغ المتوقع يتزاد فحسابك</small><strong id="previewNet">—</strong></div><div class="preview-diff"><small>الفرق</small><strong id="previewFee">—</strong></div></div>
+<p class="muted-note">المبلغ المتوقع والفرق كيبانو قبل إرسال الطلب، والمبالغ الأخرى كتتحسب بنسبة 70% حسب إعدادات الخادم الحالية. الطلب كيتراجع يدوياً وما كيعنيش تأكيد الشحن.</p>
+<p class="form-error" hidden="" id="formError" role="alert"></p>
+<button class="btn btn-main full" type="submit">متابعة لكود إنوي <span aria-hidden="true">←</span></button>
+</form>
+</section>
+<section aria-labelledby="stepTwoTitle" hidden="" id="stepTwo">
+<button class="back-btn" id="backBtn" type="button">→ رجوع للمعلومات</button><h3 id="stepTwoTitle">دخل كودات Inwi</h3><p class="hint">راجع التفاصيل ودخل كل كود فيه 16 رقم بالضبط.</p>
+<div class="review-box"><div><span>المنصة</span><strong id="reviewPlatform"></strong></div><div><span>ID الحساب</span><strong class="latin" id="reviewAccount"></strong></div><div><span>المبلغ المدفوع</span><strong id="reviewAmount"></strong></div><div class="review-highlight"><span>المبلغ المتوقع يتزاد</span><strong id="reviewNet"></strong></div></div>
+<div class="vouchers-head"><h4>كودات التعبئة</h4><div class="denominations" id="denominations"></div></div><div id="voucherFields"></div>
+<label class="agreement"><input id="adultCheck" type="checkbox"/><span>كنأكد أنني بالغ قانونياً، وعارف أن الطلب كيتراجع قبل تأكيد التعبئة، وأن الخدمة مرتبطة بمنصات المراهنات.</span></label>
+<p class="form-error" hidden="" id="detailError" role="alert"></p><button class="btn btn-main full" id="confirmBtn" type="button">إرسال الطلب للمراجعة <span aria-hidden="true">←</span></button>
+<p class="security-note">🔒 ما تعطيش الكود لأي شخص آخر. ما كنطلبوش منك كلمة السر ديال حسابك.</p>
+</section>
+</div>
+<aside class="side-column"><div class="side-card accent"><span class="side-badge">INWI ONLY</span><div class="side-symbol">ϟ</div><h3>بلا تحويل بنكي</h3><p>طريقة الأداء الوحيدة فهاد النسخة هي أكواد التعبئة ديال Inwi.</p></div><div class="side-card"><h3>معلومات مهمة</h3><ul><li>الطلبات كتتراجع يدوياً قبل التأكيد.</li><li>إرسال الكود ما كيعنيش أن الشحن تكمّل.</li><li>الخدمة مخصصة للبالغين فقط.</li><li>ما كاين حتى ضمان للربح من المراهنات.</li></ul></div><a class="whatsapp-card" href="https://wa.me/212724698562?text=Salam%20RecharGo%20bghit%20mosa3ada" rel="noopener noreferrer" target="_blank"><span class="wa-circle">✆</span><span><strong>محتاج مساعدة؟</strong><small>+212 724 698 562</small></span><span aria-hidden="true">↗</span></a></aside>
+</div>
+</section>
+<section aria-labelledby="transparencyTitle" class="transparency-section container" id="transparency"><div class="section-intro"><span class="section-label">معلومات واضحة</span><h2 id="transparencyTitle">قبل ما تصيفط الطلب</h2><p>هادي خدمة مستقلة لاستقبال طلبات تعبئة حسابات منصات المراهنات. ماشي تابعة رسمياً لأي منصة معروضة.</p></div>
+<div class="transparency-grid">
+<article><h3>كيفاش كيتعالج الطلب؟</h3><p>من بعد الإرسال، ID الحساب، المنصة، المبلغ وأكواد Inwi كيتوصل بهم فريق المعالجة عبر Telegram. الطلب كيبقى فانتظار المراجعة، وماشي تعبئة فورية.</p></article>
+<article><h3>المعطيات والخصوصية</h3><p>دخل غير ID ديال الحساب وكودات التعبئة المطلوبة. ما كنطلبوش كلمة السر. ما تصيفطش معلومات حساسة أخرى. لأي استفسار على المعطيات أو الطلب تواصل مع الدعم عبر واتساب.</p></article>
+<article><h3>السن والمخاطر</h3><p>الخدمة مخصصة للبالغين قانونياً فقط. المراهنات فيها احتمال خسارة المال، وما كاين حتى ضمان للربح. خاص استعمال الخدمة يكون مسموح به فبلادك.</p></article>
+</div></section><section aria-labelledby="faqTitle" class="faq-section container" id="faq"><div class="section-intro"><span class="section-label">عندك سؤال؟</span><h2 id="faqTitle">أسئلة شائعة</h2></div><div class="faq-list"><details><summary>واش نقدر نخلص ببطاقة بنكية؟</summary><p>لا، هاد النسخة كتقبل غير أكواد التعبئة ديال Inwi.</p></details><details><summary>شحال غادي يتزاد فحسابي؟</summary><p>المبلغ المتوقع كيبان ليك قبل ما تصيفط الطلب. الفرق بين المبلغ المدفوع والمبلغ المتوقع كيبان حتى هو.</p></details><details><summary>واش الشحن كيتأكد مباشرة؟</summary><p>لا، كل طلب خاصو مراجعة وتحقق من كود التعبئة قبل التأكيد.</p></details><details><summary>واش RecharGo تابع للمنصات؟</summary><p>RecharGo خدمة مستقلة لتلقي طلبات التعبئة، وما كيدّعيش شراكة رسمية مع المنصات المعروضة.</p></details><details><summary>كيفاش كيتحسب المبلغ إلا اخترت مبلغ آخر؟</summary><p>المبالغ اللي ما عندهاش تسعيرة خاصة كتتحسب بنسبة 70% حسب إعدادات الخادم الحالية. تقدر تدخل مبلغ من 20 حتى 2000 درهم بمضاعفات 10، والمبلغ المتوقع والفرق كيبانو قبل إرسال الطلب.</p></details><details><summary>كيفاش نطلب توضيح على طلب أو كود؟</summary><p>تواصل مع الدعم عبر واتساب قبل إرسال أكواد جديدة. إرسال الطلب ما كيعنيش قبول الكود أو إتمام التعبئة.</p></details></div></section>
 </main>
-<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div class="check">✓</div><h2 id="modalTitle">تم إرسال طلبك بنجاح!</h2><p>وصل طلبك لفريق RecharGo، وغادي يتراجع قبل تأكيد الشحن.</p><div class="modal-warning">الطلب قيد المراجعة، وماشي تأكيد على استلام الأداء أو شحن الحساب.</div><button id="modalClose" class="primary" type="button">حسناً</button></div></div>
-<noscript><div class="noscript">باش تخدم أزرار الموقع، افتحو فـ Safari أو Chrome مع تفعيل JavaScript، وماشي داخل عارض الملفات.</div></noscript>
-</body></html>
+<footer class="footer"><div class="container footer-inner"><div><div class="footer-logo">ϟ Rechar<span>Go</span></div><p>خدمة مستقلة لطلبات التعبئة بكود Inwi. للبالغين فقط. المراهنات فيها مخاطر مالية؛ العب بمسؤولية.</p></div><div class="footer-links"><a href="#start">طلب التعبئة</a><a href="#faq">أسئلة شائعة</a><a href="https://wa.me/212724698562?text=Salam%20RecharGo" rel="noopener noreferrer" target="_blank">الدعم</a><a href="#transparency">الخصوصية والمعلومات</a></div></div><div class="container copyright">© <span id="year">2026</span> RecharGo · جميع الطلبات تخضع للمراجعة</div></footer><div class="mobile-sticky"><span><strong>RecharGo</strong><small>تعبئة بكود Inwi</small></span><a href="#start">بدا الطلب ←</a></div>
+<div aria-labelledby="successTitle" aria-modal="true" class="modal" hidden="" id="successModal" role="dialog"><div class="modal-content"><div class="success-icon">✓</div><h2 id="successTitle">توصلنا بطلبك!</h2><p>الطلب ديالك وصل للمراجعة. هاد الرسالة ماشي تأكيد أن التعبئة تمت.</p><div class="reference" hidden="" id="referenceBox"></div><button class="btn btn-main full" id="modalClose" type="button">فهمت، شكراً</button></div></div>
+<noscript><div class="no-js">خصك تفعّل JavaScript باش تقدر تصيفط طلب التعبئة.</div></noscript>
+</body>
+</html>
